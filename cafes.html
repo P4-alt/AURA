@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura | Cafés</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="cafes">
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <a href="index.html" class="logo">Aura</a>
+  
+    <button type="button" class="hamburguesa" aria-label="Abrir menú"
+          aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="nav" id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="aura.html">Aura</a>
+      <a href="tapas.html">Tapas</a>
+      <a href="cafes.html">Cafés</a>
+      <a href="cocteles.html">Cocteles</a>
+    </nav>
+
+    <a href="#reservaciones" class="btn-reserva">Reservaciones</a>
+  </header>
+
+  <main class="pagina-tapas">
+
+    <h1 class="titulo-linea">Cafés</h1>
+
+    <!-- CARRUSEL: la tapa del centro es la "activa" -->
+    <section class="carrusel" aria-label="Carta de cafés">
+      <div class="pista">
+
+        <!-- CAFÉ 1 (cortada a la izquierda): cambia el nombre y el precio -->
+        <article class="slide" data-id="cafe-1">
+          <div class="foto"><img src="img/café 5.jpg" alt="Café 1"></div>
+          <div class="info">
+            <div class="nombre"><h2>Expresso Moreno</h2><p>$12</p></div>
+            <div class="estrellas"></div>
+          </div>
+        </article>
+
+        <article class="slide" data-id="cafe-2">
+          <div class="foto"><img src="img/café 3.jpg" alt="Expreso latteado"></div>
+          <div class="info">
+            <div class="nombre"><h2>Expreso latteado</h2><p>$10</p></div>
+            <div class="estrellas"></div>
+          </div>
+        </article>
+
+        <article class="slide" data-id="cafe-3">
+          <div class="foto"><img src="img/café 1.jpg" alt="Capuchino vainilla"></div>
+          <div class="info">
+            <div class="nombre"><h2>Capuchino Vainilla</h2><p>$8</p></div>
+            <div class="estrellas"></div>
+          </div>
+        </article>
+
+        <article class="slide" data-id="cafe-4">
+          <div class="foto"><img src="img/café 2.jpg" alt="Maite acaramelado"></div>
+          <div class="info">
+            <div class="nombre"><h2>Maite Acaramelado</h2><p>$12</p></div>
+            <div class="estrellas"></div>
+          </div>
+        </article>
+
+        <!-- CAFÉ 5 (cortada a la derecha): cambia el nombre y el precio -->
+        <article class="slide" data-id="cafe-5">
+          <div class="foto"><img src="img/café 4.jpg" alt="Café 5"></div>
+          <div class="info">
+            <div class="nombre"><h2>Latte Tradicional</h2><p>$8</p></div>
+            <div class="estrellas"></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- BOTÓN PDF -->
+    <div class="descarga">
+      <a href="pdf/carta-cafes.pdf" download>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+             stroke-width="1.8" aria-hidden="true">
+          <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+          <path d="M14 3v5h5M9 13h6M9 17h6"/>
+        </svg>
+        <span>PDF</span>
+      </a>
+    </div>
+
+    <!-- PEDIR CAFÉ EN GRANO (abre el panel del carrito) -->
+    <section class="pedido">
+      <button type="button" class="pedido-abrir" aria-haspopup="dialog" aria-controls="carrito">
+        <span class="pedido-titulo">Pide nuestro café en grano</span>
+        <img src="img/café en grano.jpg" alt="Paquetes de café en grano">
+      </button>
+    </section>
+
+    <!-- RESERVACIONES -->
+    <section class="reservas" id="reservaciones">
+
+      <!-- VIDEO -->
+      <div class="video-reserva">
+        <video src="video/video café.mp4" preload="metadata" playsinline></video>
+        <button type="button" class="btn-play" aria-label="Reproducir video">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>
+        </button>
+      </div>
+
+      <h2>Reservaciones</h2>
+
+      <div class="fecha">
+        <svg class="icono" viewBox="0 0 24 24" width="16" height="16" fill="none"
+             stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="17" rx="2"/>
+          <path d="M3 9h18M8 2v4M16 2v4"/>
+        </svg>
+        <input type="text" placeholder="Día" aria-label="Día" maxlength="2">
+        <span>/</span>
+        <input type="text" placeholder="Mes" aria-label="Mes" maxlength="2">
+        <span>/</span>
+        <input type="text" placeholder="Año" aria-label="Año" maxlength="4">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <a href="index.html" class="logo">Aura</a>
+    <hr>
+    <p>D: Bogotá</p>
+    <p>W: (+57) xxxxxxxx</p>
+    <p>M: info@aura.com</p>
+  </footer>
+
+  <!-- PANEL DEL CARRITO -->
+  <div class="carrito" id="carrito" role="dialog" aria-modal="true" aria-labelledby="carrito-titulo">
+    <div class="carrito-cierre" data-cerrar></div>
+
+    <aside class="carrito-panel">
+      <button type="button" class="carrito-x" aria-label="Cerrar" data-cerrar>&times;</button>
+
+      <h2 id="carrito-titulo">Pide Nuestros Cafés</h2>
+
+      <div class="producto">
+        <img src="img/café en grano.jpg" alt="Café de especialidad">
+        <p class="producto-nombre">Café de especialidad</p>
+        <p class="producto-precio">$29</p>
+      </div>
+
+      <div class="carrito-pie">
+        <hr>
+        <div class="carrito-acciones">
+          <div class="agregar">
+            <button type="button" class="btn-agregar" id="btn-agregar">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor"
+                   stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h3l2.4 11.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H6"/>
+                <circle cx="9.5" cy="19.5" r="1.3"/>
+                <circle cx="17" cy="19.5" r="1.3"/>
+                <path d="M12.5 9.5h4M14.5 7.5v4"/>
+              </svg>
+              <span>Agregar al Carrito</span>
+            </button>
+            <p class="contador">+ <span id="contador">0</span></p>
+          </div>
+
+          <button type="button" class="btn-pagar" id="btn-pagar">PAGAR</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- VENTANA "COMPRA EXITOSA" -->
+  <div class="compra" id="compra" role="alertdialog" aria-modal="true" aria-labelledby="compra-titulo">
+    <div class="compra-contenido">
+      <h2 id="compra-titulo">Compra exitosa</h2>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 12.5l5 5L20 6.5"/>
+      </svg>
+    </div>
+  </div>
+
+  <script src="js/carrusel.js"></script>
+  <script src="js/menu.js"></script> 
+  <script src="js/video.js"></script>
+  <script src="js/carrito.js"></script>
+</body>
+</html>

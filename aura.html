@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura | Quiénes somos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO (igual al del index, pero los enlaces apuntan a index.html) -->
+  <header class="header">
+    <a href="index.html" class="logo">Aura</a>
+  
+    <button type="button" class="hamburguesa" aria-label="Abrir menú"
+          aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="nav" id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="aura.html">Aura</a>
+      <a href="tapas.html">Tapas</a>
+      <a href="cafes.html">Cafés</a>
+      <a href="cocteles.html">Cocteles</a>
+    </nav>
+
+    <a href="#reservaciones" class="btn-reserva">Reservaciones</a>
+  </header>
+
+  <main class="pagina-aura">
+
+    <!-- TÍTULO CON LÍNEAS A LOS LADOS -->
+    <h1 class="titulo-linea">Aura</h1>
+
+    <!-- FILA 1: imagen a la izquierda, texto a la derecha -->
+    <section class="fila">
+      <img src="img/terraza con mesas.jpg" alt="Terraza y zona de mesas de Aura">
+      <article class="tarjeta">
+        <div class="tarjeta-interior">
+          <h2>Quiénes Somos</h2>
+          <p class="txt-pc">Somos un Day-to-Night Specialty Lounge de lujo contemporáneo creado para la Generación Z y Millennials. Integramos una comunidad de sibaritas, creadores y amantes del buen diseño que encuentran en el café exótico el punto de partida para una experiencia sensorial, estética y social sin precedentes en zonas exclusivas.</p>
+          <p class="txt-cel">Un Day-to-Night Specialty Lounge para jóvenes sibaritas en zonas exclusivas de Argentina, donde el café de especialidad y el diseño de vanguardia se convierten en un estilo de vida.</p>
+        </div>
+      </article>
+    </section>
+
+    <hr class="separador">
+
+    <!-- FILA 2: texto a la izquierda, imagen a la derecha -->
+    <section class="fila invertida">
+      <img src="img/salon principal.jpg" alt="Salón principal de Aura">
+      <article class="tarjeta">
+        <div class="tarjeta-interior">
+          <h2>Nuestra Razón de Ser</h2>
+          <p class="txt-pc">Elevamos el café de especialidad más allá de la taza, convirtiéndolo en el hilo conductor de una experiencia gastronómica integral. Investigamos varietales únicos para integrarlos en nuestra cocina de autor, la mixología botánica y cada encuentro nocturno, respondiendo al deseo de un público que busca exclusividad y descubrimiento constante.</p>
+          <p class="txt-cel">Elevamos el café de especialidad más allá de la taza, convirtiéndolo en el hilo conductor de nuestra cocina, mixología y eventos. Ofrecemos experiencias sensoriales únicas para quienes buscan exclusividad, estética y descubrimiento constante.</p>
+        </div>
+      </article>
+    </section>
+
+    <hr class="separador">
+
+    <!-- FILA 3: imagen a la izquierda, texto a la derecha -->
+    <section class="fila">
+      <img src="img/barra.jpg" alt="Barra de Aura">
+      <article class="tarjeta">
+        <div class="tarjeta-interior">
+          <h2>Nuestra Historia</h2>
+          <p class="txt-pc">AURA nació en los espacios urbanos de Argentina impulsada por la necesidad de inmigrantes colombianos, apasionados por el café, que buscaban elevar las vivencias y los recuerdos de su país natal experimentando con la mixología y la alta especialidad. Concebimos el proyecto como un refugio arquitectónico inmersivo donde el lujo relajado une la tradición cafetera con la sofisticación de la vida social.</p>
+          <p class="txt-cel">AURA nació en Argentina impulsada por inmigrantes colombianos apasionados por el café que buscaban elevar las vivencias de su país natal experimentando con la mixología. Creamos un espacio inmersivo y de lujo relajado que transforma su atmósfera al caer el sol.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- RESERVACIONES -->
+    <section class="reservas" id="reservaciones">
+
+      <!-- VIDEO -->
+      <div class="video-reserva">
+        <video src="video/video café.mp4" preload="metadata" playsinline></video>
+        <button type="button" class="btn-play" aria-label="Reproducir video">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>
+        </button>
+      </div>
+
+      <h2>Reservaciones</h2>
+
+      <div class="fecha">
+        <svg class="icono" viewBox="0 0 24 24" width="16" height="16" fill="none"
+             stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="17" rx="2"/>
+          <path d="M3 9h18M8 2v4M16 2v4"/>
+        </svg>
+        <input type="text" placeholder="Día" aria-label="Día" maxlength="2">
+        <span>/</span>
+        <input type="text" placeholder="Mes" aria-label="Mes" maxlength="2">
+        <span>/</span>
+        <input type="text" placeholder="Año" aria-label="Año" maxlength="4">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <a href="index.html" class="logo">Aura</a>
+    <hr>
+    <p>D: Bogotá</p>
+    <p>W: (+57) xxxxxxxx</p>
+    <p>M: info@aura.com</p>
+  </footer>
+
+  <script src="js/menu.js"></script>
+  <script src="js/video.js"></script>
+</body>
+</html>

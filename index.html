@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura</title>
+
+  <!-- Fuentes de Google (aproximadas a las del mockup) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <a href="index.html" class="logo">Aura</a>
+  
+    <button type="button" class="hamburguesa" aria-label="Abrir menú"
+          aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+  
+   <nav class="nav" id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="aura.html">Aura</a>
+      <a href="tapas.html">Tapas</a>
+      <a href="cafes.html">Cafés</a>
+      <a href="cocteles.html">Cocteles</a>
+    </nav>
+
+    <a href="#reservaciones" class="btn-reserva">Reservaciones</a>
+  </header>
+
+  <main>
+
+    <!-- SECCIÓN: AURA -->
+      
+    <section class="seccion" id="aura">
+      <div class="titulo-caja">
+        <h2>Aura</h2>
+        <p>Conoce nuestras instalaciones, nuestra historia y nuestra razón de ser</p>
+      </div>
+        <img src="img/Aura landingpage .jpg.jpg" alt="Instalaciones de Aura">
+    </section>
+
+    <!-- SECCIÓN: TAPAS -->
+    <section class="seccion" id="tapas">
+      <div class="titulo-caja">
+        <h2>Tapas</h2>
+        <p>Acompaña tu bebida de café con nuestras tapas</p>
+      </div>
+      <img src="img/tapas landingpage .jpg.jpg" alt="Tapas de Aura">
+    </section>
+
+    <!-- SECCIÓN: CAFÉS -->
+    <section class="seccion" id="cafes">
+      <div class="titulo-caja">
+        <h2>Cafés</h2>
+        <p>Disfruta de una buena taza de café con nuestros cafés de especialidad</p>
+      </div>
+      <img src="img/Café landingpage .jpg.jpg" alt="Cafés de especialidad">
+    </section>
+
+    <!-- SECCIÓN: COCTELES -->
+    <section class="seccion" id="cocteles">
+      <div class="titulo-caja">
+        <h2>Cocteles</h2>
+        <p>Finaliza tu día con uno de nuestros cocteles de autor a base de café</p>
+      </div>
+      <img src="img/cocteles landingpage .jpg.jpg" alt="Cocteles de autor">
+    </section>
+
+    <!-- SECCIÓN: RESERVACIONES -->
+    <section class="reservas" id="reservaciones">
+
+      <!-- VIDEO -->
+      <div class="video-reserva">
+        <video src="video/video café.mp4" preload="metadata" playsinline></video>
+        <button type="button" class="btn-play" aria-label="Reproducir video">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>
+        </button>
+      </div>
+
+      <h2>Reservaciones</h2>
+
+      <div class="fecha">
+        <svg class="icono" viewBox="0 0 24 24" width="16" height="16" fill="none"
+             stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="17" rx="2"/>
+          <path d="M3 9h18M8 2v4M16 2v4"/>
+        </svg>
+        <input type="text" placeholder="Día" aria-label="Día" maxlength="2">
+        <span>/</span>
+        <input type="text" placeholder="Mes" aria-label="Mes" maxlength="2">
+        <span>/</span>
+        <input type="text" placeholder="Año" aria-label="Año" maxlength="4">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <a href="index.html" class="logo">Aura</a>
+    <hr>
+    <p>D: Bogotá</p>
+    <p>W: (+57) xxxxxxxx</p>
+    <p>M: info@aura.com</p>
+  </footer>
+
+  <script src="js/menu.js"></script>
+  <script src="js/video.js"></script>
+</body>
+</html>
