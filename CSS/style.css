@@ -6,7 +6,8 @@
   --vino-caja:    #2f1113;   /* cajas de títulos */
   --crema:        #f3e9d2;   /* texto claro */
   --linea:        #b9ad98;   /* líneas separadoras */
-  --gris-verde:   #91ac99;   /* botón Reservaciones */
+  --crema-claro:  #f6e6cd;   /* fondo del botón Reservaciones */
+  --vino-texto:   #602828;   /* texto y borde del botón Reservaciones */
 
   --fuente-logo:   "Great Vibes", cursive;
   --fuente-titulo: "kaisei Decol", serif;
