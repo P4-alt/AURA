@@ -6,34 +6,66 @@ const carrito     = document.getElementById("carrito");
 const modalCompra = document.getElementById("compra");
 
 if (botonAbrir && carrito && modalCompra) {
+  const productos    = [...document.querySelectorAll(".producto")];
   const botonAgregar = document.getElementById("btn-agregar");
   const botonPagar   = document.getElementById("btn-pagar");
   const contador     = document.getElementById("contador");
+  const total        = document.getElementById("total");
 
-  let cantidad = leerCantidad();   // productos en el carrito
+  // Precio de cada producto, tomado del HTML (data-precio)
+  const precios = {};
+  productos.forEach((p) => { precios[p.dataset.id] = Number(p.dataset.precio); });
+
+  let elegido = null;              // producto seleccionado (todavía no agregado)
+  let items = leerCarrito();       // lo que hay en el carrito: { id: cantidad }
   let temporizador;                // para cerrar solo "Compra exitosa"
 
-  // --- Guardar y leer la cantidad en el navegador ---
-  function leerCantidad() {
+  // --- Guardar y leer el carrito en el navegador ---
+  function leerCarrito() {
     try {
-      return parseInt(localStorage.getItem(CLAVE_CARRITO), 10) || 0;
+      const datos = JSON.parse(localStorage.getItem(CLAVE_CARRITO));
+      const esObjeto = datos && typeof datos === "object" && !Array.isArray(datos);
+      return esObjeto ? datos : {};
     } catch {
-      return 0;
+      return {};
     }
   }
 
-  function guardarCantidad() {
+  function guardarCarrito() {
     try {
-      localStorage.setItem(CLAVE_CARRITO, String(cantidad));
+      localStorage.setItem(CLAVE_CARRITO, JSON.stringify(items));
     } catch {
       // Si el navegador bloquea el almacenamiento, el carrito sigue funcionando
     }
   }
 
-  // --- Actualiza el número "+ 0" y el botón PAGAR ---
+  // --- Cuentas ---
+  function cantidadTotal() {
+    return Object.keys(precios).reduce((suma, id) => suma + (items[id] || 0), 0);
+  }
+
+  function precioTotal() {
+    return Object.keys(precios).reduce((suma, id) => suma + (items[id] || 0) * precios[id], 0);
+  }
+
+  // --- Actualiza el "+ N", el Total y el estado de los botones ---
   function actualizar() {
+    const cantidad = cantidadTotal();
     contador.textContent = cantidad;
-    botonPagar.disabled = cantidad === 0;   // sin productos no se puede pagar
+    total.textContent = precioTotal();
+    botonAgregar.disabled = elegido === null;   // primero hay que elegir un producto
+    botonPagar.disabled = cantidad === 0;       // sin productos no se puede pagar
+  }
+
+  // Marca un producto como elegido (o ninguno si se pasa null)
+  function elegir(id) {
+    elegido = id;
+    productos.forEach((p) => {
+      const activo = p.dataset.id === id;
+      p.classList.toggle("seleccionado", activo);
+      p.setAttribute("aria-pressed", String(activo));
+    });
+    actualizar();
   }
 
   // Bloquea el scroll de la página mientras haya una ventana abierta
@@ -77,19 +109,25 @@ if (botonAbrir && carrito && modalCompra) {
     el.addEventListener("click", cerrarCarrito);
   });
 
-  // "Agregar al Carrito": suma 1 al contador
+  // Clic en un producto: queda elegido
+  productos.forEach((p) => {
+    p.addEventListener("click", () => elegir(p.dataset.id));
+  });
+
+  // "Agregar al Carrito": suma 1 unidad del producto elegido
   botonAgregar.addEventListener("click", () => {
-    cantidad++;
-    guardarCantidad();
+    if (elegido === null) return;
+    items[elegido] = (items[elegido] || 0) + 1;
+    guardarCarrito();
     actualizar();
   });
 
   // "PAGAR": vacía el carrito, cierra el panel y muestra "Compra exitosa"
   botonPagar.addEventListener("click", () => {
-    if (cantidad === 0) return;
-    cantidad = 0;
-    guardarCantidad();
-    actualizar();
+    if (cantidadTotal() === 0) return;
+    items = {};
+    guardarCarrito();
+    elegir(null);                  // quita la selección y actualiza
     cerrarCarrito();
     mostrarCompra();
   });
