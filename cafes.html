@@ -135,15 +135,6 @@
 
   </main>
 
-  <!-- PIE DE PÁGINA -->
-  <footer class="footer">
-    <a href="index.html" class="logo">Aura</a>
-    <hr>
-    <p>D: Bogotá</p>
-    <p>W: (+57) xxxxxxxx</p>
-    <p>M: info@aura.com</p>
-  </footer>
-
   <!-- PANEL DEL CARRITO -->
   <div class="carrito" id="carrito" role="dialog" aria-modal="true" aria-labelledby="carrito-titulo">
     <div class="carrito-cierre" data-cerrar></div>
@@ -153,28 +144,43 @@
 
       <h2 id="carrito-titulo">Pide Nuestros Cafés</h2>
 
-      <div class="producto">
-        <img src="Img/café en grano.jpg" alt="Café de especialidad">
-        <p class="producto-nombre">Café de especialidad</p>
-        <p class="producto-precio">$29</p>
+      <div class="productos">
+        <button type="button" class="producto" data-id="tradicional" data-precio="25" aria-pressed="false">
+          <img src="Img/café tradicional.jpg" alt="Café tradicional en grano">
+          <span class="producto-nombre">Tradicional en Grano</span>
+          <span class="producto-precio">$25</span>
+        </button>
+
+        <button type="button" class="producto" data-id="especialidad" data-precio="30" aria-pressed="false">
+          <img src="Img/café especialidad.jpg" alt="Café de especialidad molido">
+          <span class="producto-nombre">Especialidad Molido</span>
+          <span class="producto-precio">$30</span>
+        </button>
+
+        <button type="button" class="producto" data-id="gourmet" data-precio="35" aria-pressed="false">
+          <img src="Img/café gourmet.jpg" alt="Café gourmet molido">
+          <span class="producto-nombre">Gourmet Molido</span>
+          <span class="producto-precio">$35</span>
+        </button>
       </div>
 
       <div class="carrito-pie">
         <hr>
-        <div class="carrito-acciones">
-          <div class="agregar">
-            <button type="button" class="btn-agregar" id="btn-agregar">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor"
-                   stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M2 3h3l2.4 11.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H6"/>
-                <circle cx="9.5" cy="19.5" r="1.3"/>
-                <circle cx="17" cy="19.5" r="1.3"/>
-                <path d="M12.5 9.5h4M14.5 7.5v4"/>
-              </svg>
-              <span>Agregar al Carrito</span>
-            </button>
-            <p class="contador">+ <span id="contador">0</span></p>
-          </div>
+        <div class="carrito-resumen">
+          <button type="button" class="btn-agregar" id="btn-agregar" disabled>
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 3h3l2.4 11.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H6"/>
+              <circle cx="9.5" cy="19.5" r="1.3"/>
+              <circle cx="17" cy="19.5" r="1.3"/>
+              <path d="M12.5 9.5h4M14.5 7.5v4"/>
+            </svg>
+            <span>Agregar al Carrito</span>
+          </button>
+          <p class="contador">+ <span id="contador">0</span></p>
+
+          <p class="total-etiqueta">Total</p>
+          <p class="total-valor">$<span id="total">0</span></p>
 
           <button type="button" class="btn-pagar" id="btn-pagar">PAGAR</button>
         </div>
